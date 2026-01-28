@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class HashingQues{
     public static void majorityElement(int nums[]){
         HashMap<Integer, Integer> map = new HashMap<>();
