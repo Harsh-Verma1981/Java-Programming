@@ -12,7 +12,8 @@ public class Master{
     return ans;
   }
   public static void main(String[] argh){
-    int result = BinaryExpo(5, 10);
-    System.out.println(result);
+    int result = BinaryExpo(5, 5);
+    System.out.println(result);// op is 3125
+    
   }
 }
