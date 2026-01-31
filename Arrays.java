@@ -54,7 +54,7 @@ public class Arrays {
         }
 
         System.out.print("Enter the no: ");
-        int index_of_duplicate = sc.nextInt();
+        int index_of_duplicate = sc.nextInt();// duplicate value index
 
     // for printing the array 
         for(int i = 0;i < marks_of_subjects.length;i++) {
