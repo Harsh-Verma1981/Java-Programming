@@ -7,7 +7,7 @@ public class ArrayLists {
         Scanner sc = new Scanner(System.in);
 
         ArrayList<Integer> list = new ArrayList<Integer>();
-        ArrayList<Boolean> list2 = new ArrayList<Boolean>();
+        ArrayList<Boolean> list2 = new ArrayList<Boolean>();// Array lost formation 
 
         // append or add to add the new data in the ArrayList..
         list.add(1);
