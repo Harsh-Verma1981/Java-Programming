@@ -1,3 +1,4 @@
+import java.util.Scanner;
 // Source code to understand the Object class and it's method in Java..
 class Laptop{
     
@@ -27,6 +28,7 @@ class Laptop{
 
 public class ObjectClass {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         /* 
          * An object Class is a parent of all classes.Every class in Java automatically inherits from the Object class
          * Every user defined class like Manager Employee Car Animal etc has some built in methods.
@@ -57,6 +59,6 @@ public class ObjectClass {
     #By default it is use to get the name of the class of it's object..
     */
         
-
+        sc.close();
     }
 }
