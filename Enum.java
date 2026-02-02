@@ -177,7 +177,7 @@ Introduction to the user defined Datatype (enum) in java
 
 //     }
 // }
-import java.util.Scanner;
+import java.util.*;
 
 enum Shape {
     SQUARE,
