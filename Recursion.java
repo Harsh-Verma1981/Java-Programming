@@ -8,6 +8,8 @@ public class Recursion {
         int no = sc.nextInt();
 
         RecursiveCall(no);
+        System.out.println();
+        System.out.println(factorial(no));
 
         sc.close();
     }
@@ -20,4 +22,12 @@ public class Recursion {
         
         return RecursiveCall(n - 1);
     }
+
+    public static int factorial(int n){
+        if(n <= 1){
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+
 }
