@@ -59,22 +59,39 @@ public class Loops {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("enter the no of terms: ");
-        int n = sc.nextInt();
+        // System.out.println("enter the no of terms: ");
+        // int n = sc.nextInt();
 
-        System.out.println("Provide a number: ");
-        int number = sc.nextInt();
+        // System.out.println("Provide a number: ");
+        // int number = sc.nextInt();
 
-        int sum = 0;
+        // int sum = 0;
 
-        for(int i = 0;i < n;i++){
-            sum += number;
-            number++;
-        }
+        // for(int i = 0;i < n;i++){
+        //     sum += number;
+        //     number++;
+        // }
 
-        System.out.println("The sum of numbers- " + sum);
+        // System.out.println("The sum of numbers- " + sum);
 
+        int x = 121;
+        int backupX = x;
+        String newnum = "";
+
+        while(x != 0){
+            int digit = x % 10;
+            // System.out.print(digit);
+            newnum += digit;
+            x = x / 10;
+            // System.out.print(x + " ");
+        }System.out.println();
+        
+        // System.out.println(backupX);
+        String checker = Integer.toString(backupX);
+
+        System.out.println(newnum.equals(checker));
         sc.close();
+
     }
 }
 
