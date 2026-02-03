@@ -6,6 +6,7 @@ public class Buffer {
         InputStreamReader in = new InputStreamReader(System.in);
         BufferedReader bf = new BufferedReader(in);
 
+        // Integer parseOf use to get the value in int data
         int num = Integer.parseInt(bf.readLine());
         double number = Double.parseDouble(bf.readLine());
 
