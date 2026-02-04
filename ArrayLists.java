@@ -41,10 +41,21 @@ public class ArrayLists {
         }System.out.println();
 
         // sorting of the arraylist using collection package..
-        Collections.sort(list);
+        Collections.sort(list);// sorting ..
         
         System.out.println(list);
 
+        System.out.print("Enter the key value: ");
+        int key = sc.nextInt();
+        
+        if(list.contains(key)){
+            System.out.println("Present");
+            System.out.println(list.indexOf(key));// returning the index of the key elemnt present in list
+        }
+
+        System.out.println(list.getFirst());// get the first element in list return exception if it is empty
+        System.out.println(list.getLast());// get the last element of the list return the exception if it's empty
+        
         sc.close();
     }
 }
