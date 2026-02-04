@@ -4,12 +4,24 @@ public class Recursion {
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter the range: ");
-        int no = sc.nextInt();
+        // System.out.print("Enter the range: ");
+        int no = 5;
 
-        RecursiveCall(no);
-        System.out.println();
-        System.out.println(factorial(no));
+        // RecursiveCall(no);
+
+        // System.out.println();
+
+        // System.out.println(factorial(no));
+        // printN(no);
+
+        // System.out.println();
+
+        // int nos = 12345;
+        // System.out.println("Sum of digits by Recursion: " + SumOfDigits(nos));
+
+        System.out.println(PowerOfNumbers(3, 4));// 81
+
+        System.out.println(SumOfNnumbers(no));
 
         sc.close();
     }
@@ -30,6 +42,37 @@ public class Recursion {
         return n * factorial(n - 1);
     }
 
+    public static void printN(int n){
+        if(n == 0){
+            return ;
+        }
+        printN(n - 1);
+        System.out.print(n + " ");
+    }
+
+    public static int SumOfDigits(int x){
+        if(x == 0){
+            return 0;
+        }
+
+        return (x % 10) + SumOfDigits(x / 10);// sum of all digits
+    }
+
+    public static int PowerOfNumbers(int base, int power){
+        if(power < 1){
+            return 1;
+        }
+
+        return base * PowerOfNumbers(base, power - 1);
+    }
+
+    public static int SumOfNnumbers(int n){
+        if(n <= 1){
+            return 1;
+        }
+
+        return n + SumOfNnumbers(n - 1);
+    }
 }
 // import java.util.*;
 
