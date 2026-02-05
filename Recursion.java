@@ -23,6 +23,12 @@ public class Recursion {
 
         System.out.println(SumOfNnumbers(no));
 
+        System.out.println(countZeroes(102004));// checking no of zeroes
+
+        System.out.println(ReverseSentence("Hello"));
+
+        System.out.println(fibonacci(6));
+
         sc.close();
     }
 
@@ -72,6 +78,38 @@ public class Recursion {
         }
 
         return n + SumOfNnumbers(n - 1);
+    }
+
+    public static int countZeroes(int n){
+        if(n == 0){
+            return 0;
+        }
+
+        int count = n % 10;
+        if(count == 0){
+            return 1 + countZeroes((n /= 10));
+        }
+        else{
+            return countZeroes(n /= 10);
+        }
+    }
+
+    public static String ReverseSentence(String str){
+        
+        if (str.length() == 0) {
+            return "";
+        }
+
+        return ReverseSentence(str.substring(1)) + str.charAt(0);
+
+    }
+
+    public static int fibonacci(int n){
+        if(n <= 1){
+            return n;
+        }
+        
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }
 // import java.util.*;
