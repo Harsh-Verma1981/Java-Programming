@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ResursiveSubset {
     public static void subsequence(String s, int index, String current) {
@@ -33,6 +35,23 @@ public class ResursiveSubset {
         subsequence(s, index + 1, current + s.charAt(index));// accept
     }
 
+    public static void subset(int arr[], int idx, ArrayList<Integer> temp){
+        if(idx == arr.length){
+            System.out.println(temp);
+            return;
+        }
+
+        // Choice 1: 
+        temp.add(arr[idx]);
+        subset(arr, idx + 1, temp);// adding
+
+        // backtrack to remove the last added element
+        temp.remove(temp.size() - 1);
+
+        // Choice 2: 
+        subset(arr, idx + 1, temp);// declining
+    }
+
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         
@@ -56,8 +75,12 @@ public class ResursiveSubset {
         String current = "";
         int index = 0;
 
-        subsequence(s, index, current);
-        
+        // subsequence(s, index, current);
+
+        int arr[] = {1,2,3};
+        int idx = 0;
+        subset(arr, idx, new ArrayList<>());
+
         sc.close();
     }
 }
