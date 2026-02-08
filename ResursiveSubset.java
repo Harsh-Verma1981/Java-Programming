@@ -52,6 +52,29 @@ public class ResursiveSubset {
         subset(arr, idx + 1, temp);// declining
     }
 
+    // wrong solution ...
+    public static void subsequenceWithoutvowelTogether(String s, int index, String current){
+        int count = 0;
+        String vowel = "aeiouAEIOU";
+        if(index == s.length()){
+            if(current.compareTo(vowel)){
+                count++;
+            }
+
+            if(count <= 1){
+                System.out.println(current);
+            }
+
+            return;
+        }
+
+        // choice 1 to accept the chars from left node
+        subsequenceWithoutvowelTogether(s, index + 1, current + s.charAt(index));
+
+        // choice 2 to accept the chars from right node
+        subsequenceWithoutvowelTogether(s, index + 1, current);
+    }
+
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         
@@ -79,7 +102,10 @@ public class ResursiveSubset {
 
         int arr[] = {1,2,3};
         int idx = 0;
-        subset(arr, idx, new ArrayList<>());
+        // subset(arr, idx, new ArrayList<>());
+
+        String sa = "bae";
+        subsequenceWithoutvowelTogether(sa, index, current);
 
         sc.close();
     }
