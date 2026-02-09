@@ -50,12 +50,17 @@ public class ArrayLists {
         
         if(list.contains(key)){
             System.out.println("Present");
-            System.out.println(list.indexOf(key));// returning the index of the key elemnt present in list
+            System.out.println("Key present at index " + list.indexOf(key));// returning the index of the key elemnt present in list
         }
 
         System.out.println(list.getFirst());// get the first element in list return exception if it is empty
         System.out.println(list.getLast());// get the last element of the list return the exception if it's empty
         
+        // traversal of list ..
+        for(int i = 0;i < list.size();i++){
+            System.out.print(list.get(i) + " ");// getting the element at index i ..
+        }
+
         sc.close();
     }
 }
