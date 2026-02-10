@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class Node {
     int data;
     Node left, right;
@@ -96,6 +97,7 @@ public class BinaryTrees {
         bst.insert(60);
         bst.insert(80);
 
+        // Traversals in BST .. 
         System.out.print("Inorder: ");
         bst.inorder();          // 20 30 40 50 60 70 80
 
