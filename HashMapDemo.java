@@ -64,6 +64,8 @@ public class HashMapDemo {
         map.remove("USA");
         System.out.println(map);
 
+        // System.out.println(map.keySet(0));
+
         sc.close();
     }
 }
