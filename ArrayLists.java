@@ -61,6 +61,9 @@ public class ArrayLists {
             System.out.print(list.get(i) + " ");// getting the element at index i ..
         }
 
+        Collections.reverse(list);// to reverse the list..
+        Collections.max(list);
+
         sc.close();
     }
 }
