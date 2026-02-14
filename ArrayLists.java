@@ -64,6 +64,8 @@ public class ArrayLists {
         Collections.reverse(list);// to reverse the list..
         Collections.max(list);
 
+        list.replaceAll(e -> 99);// replacing all elements with 99
+
         sc.close();
     }
 }

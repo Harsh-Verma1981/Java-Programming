@@ -25,6 +25,19 @@ public class HashingQues{
         int res = Collections.max(map.values());
         System.out.println(res);
 
+        // for(int i = 0;i < map.size();i++){
+        //     int diff = map.keySet(i) - i;
+
+        //     System.out.println(diff);
+        // }
+        
+        int nota = map.size();
+        for(int key : nums){
+            int diff = key - 1;
+
+            System.out.print(diff + " ");
+        }
+
     }
     public static void main(String[] argh){
         int nums[] = {1,3,2,5,1,3,1,5,1};
