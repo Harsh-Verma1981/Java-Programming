@@ -60,6 +60,8 @@ public class ArraysMethod {
         /* sort method is use to sort the array */
         int []price = {12, 1, 2,5, 2, 11};
 
+        
+
         Arrays.sort(price);
 
         for(int i : price){
