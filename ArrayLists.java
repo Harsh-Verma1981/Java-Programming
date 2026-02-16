@@ -35,16 +35,17 @@ public class ArrayLists {
         // to get the size of the arraylist..
         System.out.println(list.size());
 
+        
         System.out.println("Accessing Element using forEach Loop: ");
         for(int i : list){
             System.out.print(i + " ");
         }System.out.println();
-
+        
         // sorting of the arraylist using collection package..
         Collections.sort(list);// sorting ..
         
         System.out.println(list);
-
+        
         System.out.print("Enter the key value: ");
         int key = sc.nextInt();
         
@@ -52,20 +53,21 @@ public class ArrayLists {
             System.out.println("Present");
             System.out.println("Key present at index " + list.indexOf(key));// returning the index of the key elemnt present in list
         }
-
+        
         System.out.println(list.getFirst());// get the first element in list return exception if it is empty
         System.out.println(list.getLast());// get the last element of the list return the exception if it's empty
         
         // traversal of list ..
         for(int i = 0;i < list.size();i++){
             System.out.print(list.get(i) + " ");// getting the element at index i ..
-        }
-
+        }System.out.println();
+        
         Collections.reverse(list);// to reverse the list..
         Collections.max(list);
-
+        
         list.replaceAll(e -> 99);// replacing all elements with 99
-
+        
+        System.out.println(list.indexOf(0));
         sc.close();
     }
 }

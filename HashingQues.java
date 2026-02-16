@@ -13,6 +13,8 @@ public class HashingQues{
             }
         }
 
+        // map.remove(1);// removing key from the map 
+
         // for(int key : map.keySet()){
         //     if(map.get(key) > n/3){
         //         System.out.print(key + ".");
@@ -31,12 +33,12 @@ public class HashingQues{
         //     System.out.println(diff);
         // }
         
-        int nota = map.size();
-        for(int key : nums){
-            int diff = key - 1;
+        // int nota = map.size();
+        // for(int key : nums){
+        //     int diff = key - 1;
 
-            System.out.print(diff + " ");
-        }
+        //     System.out.print(diff + " ");
+        // }
 
     }
     public static void main(String[] argh){
