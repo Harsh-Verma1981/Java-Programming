@@ -67,7 +67,11 @@ public class ArrayLists {
         
         list.replaceAll(e -> 99);// replacing all elements with 99
         
-        System.out.println(list.indexOf(0));
+        System.out.println(list.indexOf(11));
+
+        boolean res = list.equals(list2);
+        System.out.println(res);
+
         sc.close();
     }
 }
