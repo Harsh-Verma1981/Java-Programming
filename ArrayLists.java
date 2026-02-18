@@ -69,6 +69,8 @@ public class ArrayLists {
         
         System.out.println(list.indexOf(11));
 
+        int []arr = list.stream().mapToInt(i -> i).toArray();// converting to array
+
         boolean res = list.equals(list2);
         System.out.println(res);
 

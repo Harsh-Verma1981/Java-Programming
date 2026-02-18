@@ -75,5 +75,14 @@ public class ArraysMethod {
         // else if duplicate values are there it can print any index value of that key ..
 
         System.err.println(Arrays.binarySearch(arr, key));
+
+        int a[] = {1,1,2,2};
+        int b[] = {2,2};
+
+        int op = Arrays.compare(a, b);
+        if(op == 0){
+            System.out.println("Equal");
+        }
+        
     }
 }
