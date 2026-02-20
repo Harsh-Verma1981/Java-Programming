@@ -65,7 +65,7 @@ public class StringIntro {
 
         // substring method..
         
-        String sentence = "Hello, May you have a good day.";
+        String sentence = "Hello, you may have a good day.";
         System.out.println(sentence.length());
         String Substr = sentence.substring(0,7);
 
@@ -139,6 +139,42 @@ public class StringIntro {
         System.out.println(a + " is a digit: " + Character.isLetter(a));
         System.out.println(on + " is a digit: " + Character.isDigit(on));// use to check if the char value is the number or not..
         System.out.println(Character.isLetterOrDigit(1));
+
+        // counting vowels in String ..
+        String input = "Hello Java";
+        String vowels = "aeiouAEIOU"; // Reference string
+        int count = 0;
+
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            // Check if the current character is in the vowel string
+            if (vowels.indexOf(ch) != -1) {
+                count++;
+                System.out.println("Found vowel: " + ch);
+            }
+        }
+
+        System.out.println("Total vowels: " + count);
+
+        // removing vowels in String ..
+        // Method I 
+        String dialogue = "The name is bond James Bond";
+        String minimo = ""; // fillings chars that are not vowels.
+
+        for(int i = 0;i < dialogue.length();i++){
+            char ch = dialogue.charAt(i);
+
+            if(vowels.indexOf(ch) == -1){
+                minimo += ch;
+            }
+        }
+
+        System.out.println("String after vowel removal: " + minimo);
+        // Method II
+        dialogue = dialogue.replaceAll("[AEIOUaeiou]", "");
+
+        System.out.println(dialogue);
+        
         sc.close();
     }
 }
