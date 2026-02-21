@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class BinarySearch {
+    // Searching in a array where the elements are rotated from sorted array
     public static int BinarySearchforRotatedArray(int arr[], int k){
         int s = 0;
         int e = arr.length - 1;
@@ -11,10 +12,11 @@ public class BinarySearch {
 
             if(arr[mid] == k) return mid;
 
+            // special cases for rotated array
             else if(arr[mid] >= arr[0] && k < arr[0]){
                 s = mid + 1;
             }
-
+            // special cases for rotated array
             else if(arr[mid] < arr[0] && k >= arr[0]){
                 e = mid - 1;
             }
