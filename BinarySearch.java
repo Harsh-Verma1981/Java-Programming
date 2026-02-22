@@ -50,6 +50,12 @@ public class BinarySearch {
 
         int index = BinarySearchforRotatedArray(nums, target);
         System.out.println(index);// at index 1 
+
+        int maxy = Integer.MAX_VALUE;// to get the maximum int value
+        System.out.println(maxy);
+
+        int mini = Integer.MIN_VALUE;
+        System.out.println(mini);
         
         sc.close();
     }
