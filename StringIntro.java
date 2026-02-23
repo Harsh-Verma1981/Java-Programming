@@ -174,6 +174,17 @@ public class StringIntro {
         dialogue = dialogue.replaceAll("[AEIOUaeiou]", "");
 
         System.out.println(dialogue);
+
+        // String to Integer conversion
+        String phoneNo = "9999";
+        int res = Integer.parseInt(phoneNo);
+
+        System.out.println(res);
+
+        // Integer to String conversion
+        int marking = 89;
+        String myMarks = Integer.toString(marking);
+        System.out.println(myMarks);
         
         sc.close();
     }
