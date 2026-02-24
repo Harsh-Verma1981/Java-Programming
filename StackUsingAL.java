@@ -32,7 +32,8 @@ public class StackUsingAL {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
-        Stack s = new Stack();
+        // Stack s = new Stack(); // manualy implementation
+        Stack<Integer> s = new Stack<>();
 
         s.push(12);
         s.push(1);
