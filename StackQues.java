@@ -41,11 +41,16 @@ public class StackQues {
         st.push(3);
 
         // pushAtBottom(4, st);// pushing 4 at bottom 
-        reverseStack(st);
+        // reverseStack(st);
 
-        while(!st.empty()) {
-            System.out.print("|" + st.peek() + "|");
-            st.pop();
-        }
+        // while(!st.empty()) {
+        //     System.out.print("|" + st.peek() + "|");
+        //     st.pop();
+        // }
+
+        if(st.peek().equals(3)) System.out.println("YES");
+        else System.out.println("NO");
+
+        
     }
 }
