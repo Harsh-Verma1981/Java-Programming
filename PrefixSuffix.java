@@ -2,6 +2,21 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class PrefixSuffix {
+    public static int OddPrimePairs(int []arr, int l , int r){
+        // arr = {2, 3, 5, 2, 7, 11} l = 1 r = 6
+        int count = 0;
+        int left = l - 1;
+        int right = r - 1;
+        // brute force approach 
+        for(int i = left;i <= right;i++){
+            for(int j = i + 1;j <= right;j++){
+                if((arr[i] + arr[j]) % 2 == 1) count++;
+            }
+        }
+
+        return count;
+
+    }
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
 
@@ -32,6 +47,19 @@ public class PrefixSuffix {
         System.out.println("Suffix Sum: ");
         for(int i = 0;i < n;i++){
             System.out.print(prefix[i] + " ");
+        }System.out.println();
+
+        int prime[] = {2, 3, 5, 2, 7, 11};
+
+        int noOfQueries = 3;
+        for(int i = 0;i < noOfQueries;i++){
+            System.out.print("Enter the Left Range: ");
+            int l = sc.nextInt();
+            System.out.print("Enter the Right Range: ");
+            int r = sc.nextInt();
+
+            int result = OddPrimePairs(prime, l, r);
+            System.out.println("There are " + result + " Odd Pairs.");
         }
 
         sc.close();
