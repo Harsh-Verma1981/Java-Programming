@@ -64,4 +64,4 @@ public class PrefixSuffix {
 
         sc.close();
     }
-}
+}   
