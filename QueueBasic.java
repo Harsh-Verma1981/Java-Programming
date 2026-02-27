@@ -28,8 +28,8 @@ public class QueueBasic{
 
         System.out.println(q.element());// retrieve the front element but if q is empty return the exception error
         
-        // if(q.contains(12)) System.out.println("Yes");
-        // else System.out.println("No");
+        if(q.contains(12)) System.out.println("Yes");
+        else System.out.println("No");
 
         // int size = q.size();
         // System.out.println("Size of the Queue is " + size);
