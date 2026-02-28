@@ -31,8 +31,8 @@ public class QueueBasic{
         if(q.contains(12)) System.out.println("Yes");
         else System.out.println("No");
 
-        // int size = q.size();
-        // System.out.println("Size of the Queue is " + size);
+         int size = q.size();
+         System.out.println("Size of the Queue is " + size);
 
         sc.close();
     }
