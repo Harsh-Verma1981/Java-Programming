@@ -18,6 +18,16 @@ public class Maths {
         return gcd;
     }
 
+    public static int AddDigits(int num){
+        // adding digits of a number till one digit remain..
+        // Example: 38 => 3 + 8 = 11 .. 11=> 1 + 1 = 2.. output is 2
+        if(num == 0) return 0;
+
+        else if(num % 9 == 0) return 9;
+
+        return(num % 9);
+    }
+
     public static void classicHashing(){
 
         int n;
