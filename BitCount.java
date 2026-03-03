@@ -21,6 +21,14 @@ public class BitCount {
         System.out.println("\nFor the number: " + zero);
         System.out.println("Binary representation: " + Integer.toBinaryString(zero));
         System.out.println("Number of set bits: " + count3); // Output: 0
+
+        int no = 11;
+        String binary = Integer.toBinaryString(no);
+
+        System.out.println("Binary Representation of " + no + " is " + binary);// 1011
+
+        int onesbits = Integer.bitCount(no);
+        System.out.println("Total Number of 1's Bits in " + no + " is " + onesbits);
     }
 }
 
