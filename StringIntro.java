@@ -185,6 +185,31 @@ public class StringIntro {
         int marking = 89;
         String myMarks = Integer.toString(marking);
         System.out.println(myMarks);
+
+        // reversing string words
+        String myName = "HarVe is an SDE";
+        // output should be SDE an is HarVe
+        Stack<String> stack = new Stack<>();
+        String str = "";
+
+        for(int i = 0;i < myName.length();i++){
+            char ch = myName.charAt(i);
+            
+            if(ch == ' '){
+                stack.push(str);
+                stack.push(" ");
+
+                st = "";// reinitialise
+            }
+
+            str += ch;
+
+        }
+
+        while(!stack.empty()){
+            System.out.print(stack.peek());
+            stack.pop();
+        }
         
         sc.close();
     }
