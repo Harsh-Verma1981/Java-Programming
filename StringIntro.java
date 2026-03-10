@@ -186,30 +186,60 @@ public class StringIntro {
         String myMarks = Integer.toString(marking);
         System.out.println(myMarks);
 
-        // reversing string words
+        // // reversing string words
+        // String myName = "HarVe is an SDE";
+        // // output should be SDE an is HarVe
+        // Stack<String> stack = new Stack<>();
+        // String str = "";
+
+        // for(int i = 0;i < myName.length();i++){
+        //     char ch = myName.charAt(i);
+            
+        //     if(ch == ' '){
+        //         stack.push(str);
+        //         stack.push(" ");
+
+        //         st = "";// reinitialise
+        //     }
+
+        //     str += ch;
+
+        // }
+
+        // while(!stack.empty()){
+        //     System.out.print(stack.peek());
+        //     stack.pop();
+        // }
+
         String myName = "HarVe is an SDE";
-        // output should be SDE an is HarVe
+        // output should be: SDE an is HarVe
+
         Stack<String> stack = new Stack<>();
         String str = "";
 
-        for(int i = 0;i < myName.length();i++){
+        for (int i = 0; i < myName.length(); i++) {
             char ch = myName.charAt(i);
-            
-            if(ch == ' '){
-                stack.push(str);
-                stack.push(" ");
 
-                st = "";// reinitialise
+            if (ch == ' ') {
+                stack.push(str);  // push the completed word
+                stack.push(" ");  // push the space
+                str = "";         // ✅ Fix 1: was "st = """ (typo)
+            } else {
+                str += ch;        // ✅ Fix 2: only append if NOT a space
             }
-
-            str += ch;
-
         }
 
-        while(!stack.empty()){
-            System.out.print(stack.peek());
-            stack.pop();
+        // ✅ Fix 3: push the last word (no trailing space to trigger it)
+        stack.push(str);
+
+        while (!stack.empty()) {
+            System.out.print(stack.pop()); // pop() already returns + removes
         }
+        // ```
+
+        // **Output:**
+        // ```
+        // SDE an is HarVe
         
         sc.close();
     }
