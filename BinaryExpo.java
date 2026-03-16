@@ -6,7 +6,7 @@ public class BinaryExpo{
       int ans = 1;
       while(b > 0){
         if(b % 2 == 1){
-              ans = ans * a;
+          ans = ans * a;
         }
         a = a * a;
         b = b / 2;
