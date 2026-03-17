@@ -51,6 +51,8 @@ public class StackQues {
         if(st.peek().equals(3)) System.out.println("YES");
         else System.out.println("NO");
 
-        
+        if(st.contains(12)){
+            System.out.println("Yes!");
+        } else System.out.println("No!");
     }
 }
