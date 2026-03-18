@@ -3,6 +3,7 @@ import java.util.Arrays;
 
 public class MonotonicStack {
     /*
+    Monolithic stack is a stack that kepps element in some sort of order like smallest to biggest and vice versa..
         There are two flavors:
         Monotonic Increasing — bottom to top goes small → big. If new number is smaller than top, pop until it fits.
         Monotonic Decreasing — bottom to top goes big → small. If new number is bigger than top, pop until it fits.
