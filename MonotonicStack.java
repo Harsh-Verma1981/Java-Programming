@@ -48,12 +48,37 @@ public class MonotonicStack {
         return result;
     }
 
+    public static int[] DailyTemperatures(int []arr){
+        int n = arr.length;
+        int res[] = new int[n];// step1 : creating res to store the o/p
+
+        Stack<Integer> st = new Stack<>();
+
+        for(int i = 0;i < n;i++){
+          // step 2 : iterating in array and finding the diff for warmer array
+
+            while(!st.isEmpty() && arr[i] > arr[st.peek()]){
+                int popIdx = st.pop();
+                res[popIdx] = i - popIdx; //  difference for warm day 
+            }
+
+            st.push(i);
+        }
+
+        return res;
+    }
+
     public static void main(String[] args) {
 
         int[] nums = {3, 1, 4, 2, 5};
         int[] result = nextGreaterElement(nums);
 
-        System.out.println(Arrays.toString(result));
+        int temp[] = {72,73,74,76,61,65,78,70};
+        int res[] = DailyTemperatures(temp);// o/p => 1,1,1,3,1,1,0,0 
+
+        System.out.print(Arrays.toString(res));
+
+        // System.out.println(Arrays.toString(result));
         // Output: [4, 4, 5, 5, -1]
     }
 }
