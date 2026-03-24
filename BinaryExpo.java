@@ -4,8 +4,8 @@ public class BinaryExpo{
   // to find the pow of a to the power b
     public static double BinaryExponential(double a, int b){
       if(b < 0){ //  base case for negative powers .. 
-            b = -b;
-            a = 1 / a;
+          b = -b;
+          a = 1 / a;
       }
       double ans = 1;
       while(b > 0){
