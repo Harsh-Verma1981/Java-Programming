@@ -68,6 +68,36 @@ public class MonotonicStack {
         return res;
     }
 
+    public static int evalRPN(String []tokens){
+        Stack<Integer> s = new Stack<>();
+
+        for(String val : tokens){
+            if(val.equals("+")){
+              s.push(s.pop() + s.pop());
+            }
+            else if(val.equals("*")){
+              s.push(s.pop() * s.pop());
+            }
+            else if(val.equals("-")){
+              int a = s.pop();
+              int b = s.pop();
+
+              s.push(b - a);
+            }
+            else if(val.equals("/")){
+              int a = s.pop();
+              int b = s.pop();
+
+              s.push(b / a);
+            }
+            else{
+              s.push(Integer.parseInt(val));
+            }
+        }
+        
+        return s.peek();
+    }
+
     public static void main(String[] args) {
 
         int[] nums = {3, 1, 4, 2, 5};
@@ -76,7 +106,10 @@ public class MonotonicStack {
         int temp[] = {72,73,74,76,61,65,78,70};
         int res[] = DailyTemperatures(temp);// o/p => 1,1,1,3,1,1,0,0 
 
-        System.out.print(Arrays.toString(res));
+        // System.out.print(Arrays.toString(res));
+
+        String[] tokens = {"4","13","5","/","+"};// 6
+        System.out.println(evalRPN(tokens));
 
         // System.out.println(Arrays.toString(result));
         // Output: [4, 4, 5, 5, -1]
