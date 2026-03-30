@@ -12,6 +12,12 @@ public class CarFleet {
             cars[i][1] = speed[i];
         }
 
+        // When i=0:  cars[0][0]=10,  cars[0][1]=2
+        // When i=1:  cars[1][0]=8,   cars[1][1]=4
+        // When i=2:  cars[2][0]=0,   cars[2][1]=1
+        // When i=3:  cars[3][0]=5,   cars[3][1]=1
+        // When i=4:  cars[4][0]=3,   cars[4][1]=3
+
         Arrays.sort(cars, (a , b) -> Integer.compare(b[0], a[0]));
         Stack<Double> stack = new Stack<>();
 
