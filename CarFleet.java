@@ -18,7 +18,7 @@ public class CarFleet {
         // When i=3:  cars[3][0]=5,   cars[3][1]=1
         // When i=4:  cars[4][0]=3,   cars[4][1]=3
 
-        Arrays.sort(cars, (a , b) -> Integer.compare(b[0], a[0]));
+        Arrays.sort(cars, (a , b) -> Integer.compare(b[0], a[0]));// desc order sorting
         Stack<Double> stack = new Stack<>();
 
         for(int []car : cars){
