@@ -22,8 +22,11 @@ public class CarFleet {
         Stack<Double> stack = new Stack<>();
 
         for(int []car : cars){
-            int pos = car[0];
-            int spd = car[1];
+            // car = one row, e.g. [10, 2]  or  [5, 1]
+            //        index:   [0]    [1]
+
+            int pos = car[0];  // col 0 = position (our rule)
+            int spd = car[1];  // col 1 = speed    (our rule)
 
             double time = (target - pos) / spd;
 
