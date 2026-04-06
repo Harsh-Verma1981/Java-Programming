@@ -234,12 +234,21 @@ public class StringIntro {
 
         while (!stack.empty()) {
             System.out.print(stack.pop()); // pop() already returns + removes
-        }
+        }System.out.println();
         // ```
 
         // **Output:**
         // ```
         // SDE an is HarVe
+
+        // String inputSample = "Hello There";
+        // System.out.println(inputSample.substring(1) + inputSample.charAt(0));
+
+        // for(int i = 0;i < inputSample.length();i++){
+        //     inputSample = inputSample.substring(1) + inputSample.charAt(i);
+        // }
+
+        // System.out.println(inputSample);
         
         sc.close();
     }
