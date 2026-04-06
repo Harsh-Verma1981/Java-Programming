@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 public class ResursiveSubset {
     public static void subsequence(String s, int index, String current) {
@@ -52,28 +53,54 @@ public class ResursiveSubset {
         subset(arr, idx + 1, temp);// declining
     }
 
-    // wrong solution ...
-    public static void subsequenceWithoutvowelTogether(String s, int index, String current){
-        int count = 0;
-        String vowel = "aeiouAEIOU";
-        if(index == s.length()){
-            if(current.compareTo(vowel)){
-                count++;
-            }
+    public static List<List<Integer>> subsetWithoutDuplicates(int[] nums){
+        List<List<Integer>> holdingList = new ArrayList<>();
+        List<Integer> makerList = new ArrayList<>();
+        Arrays.sort(nums);
 
-            if(count <= 1){
-                System.out.println(current);
-            }
+        createSubset(nums, 0, holdingList, makerList);
+        return holdingList;
+    }
 
+    public static void createSubset(int[] nums, int start, List<List<Integer>> holdingList, List<Integer> makerList){
+        if(start == nums.length){
+            holdingList.add(new ArrayList<>(makerList));
             return;
         }
 
-        // choice 1 to accept the chars from left node
-        subsequenceWithoutvowelTogether(s, index + 1, current + s.charAt(index));
+        // accepting element
+        makerList.add(nums[start]);
+        createSubset(nums, start + 1, holdingList, makerList);
 
-        // choice 2 to accept the chars from right node
-        subsequenceWithoutvowelTogether(s, index + 1, current);
+        // undo or rollback for backtrack
+        makerList.remove(makerList.size() - 1);
+
+        createSubset(nums, start + 1, holdingList, makerList);
+
     }
+
+    // wrong solution ...
+    // public static void subsequenceWithoutvowelTogether(String s, int index, String current){
+    //     int count = 0;
+    //     String vowel = "aeiouAEIOU";
+    //     if(index == s.length()){
+    //         if(current.compareTo(vowel)){
+    //             count++;
+    //         }
+
+    //         if(count <= 1){
+    //             System.out.println(current);
+    //         }
+
+    //         return;
+    //     }
+
+    //     // choice 1 to accept the chars from left node
+    //     subsequenceWithoutvowelTogether(s, index + 1, current + s.charAt(index));
+
+    //     // choice 2 to accept the chars from right node
+    //     subsequenceWithoutvowelTogether(s, index + 1, current);
+    // }
 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -105,7 +132,11 @@ public class ResursiveSubset {
         // subset(arr, idx, new ArrayList<>());
 
         String sa = "bae";
-        subsequenceWithoutvowelTogether(sa, index, current);
+        // subsequenceWithoutvowelTogether(sa, index, current);
+
+        int []nums = {1,2,2};
+        List<List<Integer>> holdingList = new ArrayList<>(subsetWithoutDuplicates(nums));
+        System.out.println(holdingList);
 
         sc.close();
     }
