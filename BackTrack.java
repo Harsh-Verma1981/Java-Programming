@@ -26,6 +26,16 @@ public class BackTrack {
         ParaSum(i - 1, sum + i);
     }
 
+    // functional way 
+    // here we are breaking problem into sub problems ..
+    public static int FuncSum(int n){
+        if(n == 0){
+            return 0;
+        }
+
+        return n + FuncSum(n - 1);
+    }
+
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
 
@@ -38,5 +48,7 @@ public class BackTrack {
 
         int sum = 0;
         ParaSum(n, sum);
+
+        System.out.println("Functional way for sum " + FuncSum(n));
     }    
 }
