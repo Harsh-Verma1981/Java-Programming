@@ -16,6 +16,16 @@ public class BackTrack {
         System.out.println(i + ". Thank You God!");
     }
 
+    // Parameterized way to return the sum
+    public static void ParaSum(int i, int sum){
+        if(i < 1) {
+            System.out.println("Sum of N numbers: " + sum);
+            return;
+        }
+
+        ParaSum(i - 1, sum + i);
+    }
+
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
 
@@ -25,5 +35,8 @@ public class BackTrack {
         print1toN(n, n);
         System.out.println();
         printNto1(1, n);
+
+        int sum = 0;
+        ParaSum(n, sum);
     }    
 }
