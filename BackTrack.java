@@ -68,6 +68,20 @@ public class BackTrack {
 
         SinglePtrReversal(first + 1, arr);
     }
+
+    public static boolean Palindrome(int i, int j, String str){
+        if(i >= j){
+            return true;
+        }
+
+        if(str.charAt(i) != str.charAt(j)){
+            return false;
+        }
+
+        return Palindrome(i + 1, j - 1, str);
+
+        // return true;
+    }
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
 
@@ -88,5 +102,11 @@ public class BackTrack {
         // ReverseArr(i, j, arr);
         SinglePtrReversal(i, arr);
 
-    }    
+        String str = "MADAM";
+        int firstidx = 0;
+        int lastindx = str.length() - 1;
+
+        if(Palindrome(firstidx, lastindx, str)) System.out.println("Palindrome");
+        else System.out.println("Not Palindrome");
+    }   
 }
