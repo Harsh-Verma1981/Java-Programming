@@ -155,6 +155,25 @@ public class BackTrack {
         return false;
     }
 
+    public static int CountSubsequence(int index, int[] arr, int sum, int k){
+        if(index == arr.length){
+            if(sum == k){
+                return 1;
+            }
+
+            return 0;
+        }
+
+        sum+=arr[index];
+        int left = CountSubsequence(index + 1, arr, sum, k);// acc to recursn tree all of this method will execute
+
+        sum-=arr[index];
+
+        int right = CountSubsequence(index + 1, arr, sum, k);// then this will execute
+
+        return left + right;
+    }
+
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
 
@@ -194,5 +213,9 @@ public class BackTrack {
 
         // if(!PrintOneSubsequence(0, subk, list, 0, k)) System.out.println("No subsequence with sum equals to k");
         PrintOneSubsequence(0, subk, list, 0, k);
+
+        int count = CountSubsequence(0, subk, 0, k);
+        System.out.println(count);
+        
     }   
 }
