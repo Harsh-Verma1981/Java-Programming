@@ -131,6 +131,30 @@ public class BackTrack {
         SubsequenceSumK(index + 1, arr, list, sum, k);
     }
 
+    public static boolean PrintOneSubsequence(int index, int[] arr, List<Integer> list, int sum, int k){
+        if(index == arr.length){
+            // condition satisfy
+            if(sum == k){
+                System.out.println(list);
+                return true;
+            }
+            // condition not satisfy
+            return false;
+        }
+
+        list.add(arr[index]);
+        sum += arr[index];
+
+        if(PrintOneSubsequence(index + 1, arr, list, sum, k) == true) return true;
+        list.remove(list.size() - 1);
+        sum -= arr[index];
+
+        if(PrintOneSubsequence(index + 1, arr, list, sum, k) == true) return true;
+
+        // for no subsequence
+        return false;
+    }
+
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
 
@@ -165,7 +189,10 @@ public class BackTrack {
         // subsequence(0, sub, mainList, list);
 
         int[] subk = {1,2,1};
-        int k = 2;
-        SubsequenceSumK(0, subk, list, 0, k);
+        int k = 4;
+        // SubsequenceSumK(0, subk, list, 0, k);
+
+        // if(!PrintOneSubsequence(0, subk, list, 0, k)) System.out.println("No subsequence with sum equals to k");
+        PrintOneSubsequence(0, subk, list, 0, k);
     }   
 }
