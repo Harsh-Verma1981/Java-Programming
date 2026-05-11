@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BackTrack {
     // basic BackTrack code to understand the BTS scenario ..
@@ -82,6 +84,53 @@ public class BackTrack {
 
         // return true;
     }
+
+    // Multiple recursive call: call attended level by level
+    // using fibonacci example
+    public static int fibonacci(int n){
+        if(n <= 1) return n;
+
+        int last = fibonacci(n - 1); // first complete all of it's recursive call
+        int seclast = fibonacci(n - 2);// then come to this func and do same
+
+        return last + seclast; 
+    }
+    // subsequence 
+    public static void subsequence(int index, int[] arr, List<List<Integer>> mainList, List<Integer> list){
+        if(index >= arr.length){
+            mainList.add(new ArrayList<>(list));
+            System.out.println(mainList);
+            return;
+        }
+
+        list.add(arr[index]);
+        // take or pick the particular index into the subsequence
+        subsequence(index + 1, arr, mainList, list);
+        list.remove(list.size() - 1);
+
+        // not pick or not take condition, this element is not added to subsequence
+        subsequence(index + 1, arr, mainList, list);
+    }
+
+    // subsequence with sum k
+    public static void SubsequenceSumK(int index, int[] arr, List<Integer> list, int sum, int k){
+        if(index == arr.length){
+            if(sum == k){
+                System.out.println(list);
+            }
+            return;
+        }
+
+        list.add(arr[index]);
+        sum += arr[index];
+
+        SubsequenceSumK(index + 1, arr, list, sum, k);
+        list.remove(list.size() - 1);
+        sum -= arr[index];
+
+        SubsequenceSumK(index + 1, arr, list, sum, k);
+    }
+
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
 
@@ -108,5 +157,15 @@ public class BackTrack {
 
         if(Palindrome(firstidx, lastindx, str)) System.out.println("Palindrome");
         else System.out.println("Not Palindrome");
+
+        int []sub = {3,1,2};
+        List<List<Integer>> mainList = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+
+        // subsequence(0, sub, mainList, list);
+
+        int[] subk = {1,2,1};
+        int k = 2;
+        SubsequenceSumK(0, subk, list, 0, k);
     }   
 }
