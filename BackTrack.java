@@ -177,8 +177,9 @@ public class BackTrack {
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter The Number: ");
-        int n = sc.nextInt();
+        // System.out.print("Enter The Number: ");
+        // int n = sc.nextInt();
+        int n = 3;
 
         print1toN(n, n);
         System.out.println();
@@ -208,14 +209,14 @@ public class BackTrack {
         // subsequence(0, sub, mainList, list);
 
         int[] subk = {1,2,1};
-        int k = 4;
+        int k = 2;
         // SubsequenceSumK(0, subk, list, 0, k);
 
         // if(!PrintOneSubsequence(0, subk, list, 0, k)) System.out.println("No subsequence with sum equals to k");
-        PrintOneSubsequence(0, subk, list, 0, k);
+        // PrintOneSubsequence(0, subk, list, 0, k);
 
         int count = CountSubsequence(0, subk, 0, k);
-        System.out.println(count);
-        
+        System.out.println("Count is " + count);
+
     }   
 }
