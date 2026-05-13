@@ -210,13 +210,14 @@ public class BackTrack {
 
         int[] subk = {1,2,1};
         int k = 2;
-        // SubsequenceSumK(0, subk, list, 0, k);
+        SubsequenceSumK(0, subk, list, 0, k);
 
         // if(!PrintOneSubsequence(0, subk, list, 0, k)) System.out.println("No subsequence with sum equals to k");
         // PrintOneSubsequence(0, subk, list, 0, k);
 
-        int count = CountSubsequence(0, subk, 0, k);
-        System.out.println("Count is " + count);
+        // int count = CountSubsequence(0, subk, 0, k);
+        // System.out.println("Count is " + count);
 
+        
     }   
 }
