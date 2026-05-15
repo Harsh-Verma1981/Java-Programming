@@ -100,18 +100,18 @@ public class MonotonicStack {
     
     public static void main(String[] args) {
 
-        int[] nums = {3, 1, 4, 2, 5};
+        int[] nums = {4, 2, 1, 4};// 3, 1, 4, 2, 5
         int[] result = nextGreaterElement(nums);
 
-        int temp[] = {72,73,74,76,61,65,78,70};
-        int res[] = DailyTemperatures(temp);// o/p => 1,1,1,3,1,1,0,0 
+        // int temp[] = {72,73,74,76,61,65,78,70};
+        // int res[] = DailyTemperatures(temp);// o/p => 1,1,1,3,1,1,0,0 
 
-        // System.out.print(Arrays.toString(res));
+        // // System.out.print(Arrays.toString(res));
 
-        String[] tokens = {"4","13","5","/","+"};// 6
-        System.out.println(evalRPN(tokens));
+        // String[] tokens = {"4","13","5","/","+"};// 6
+        // System.out.println(evalRPN(tokens));
 
-        // System.out.println(Arrays.toString(result));
+        System.out.println(Arrays.toString(result));
         // Output: [4, 4, 5, 5, -1]
     }
 }
