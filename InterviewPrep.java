@@ -80,6 +80,9 @@ public class InterviewPrep {
             result.add(map);
         }
 
+        // entrySet() gives you all key-value pairs as a set of entries:
+        // entries = [(2=2), (3=3), (4=4)]
+
         return result;
     }
 
