@@ -1,4 +1,9 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class InterviewPrep {
     public static int[] countSmallerToRight(int[] nums) {
@@ -52,10 +57,42 @@ public class InterviewPrep {
         }
     }
 
+    public static List<Map<Integer, Integer>> frequencyList(int[] arr) {
+
+        // TreeMap keeps keys in ascending order
+        TreeMap<Integer, Integer> freqMap = new TreeMap<>();// treemap return keys in asc order ..
+
+        // Count frequency
+        for (int num : arr) {
+            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
+        }
+
+        // Final answer list
+        List<Map<Integer, Integer>> result = new ArrayList<>();
+
+        // Insert into list in ascending order
+        for (Map.Entry<Integer, Integer> entry : freqMap.entrySet()) {
+
+            Map<Integer, Integer> map = new HashMap<>();
+
+            map.put(entry.getKey(), entry.getValue());
+
+            result.add(map);
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
         int[] nums = {4, 2, 1, 4};
         int[] result = countSmallerToRight(nums);
         System.out.println(Arrays.toString(result));
         // Output: [2, 1, 0, 0]
+
+        int[] arr = {4, 2, 3, 2, 1, 4, 1};
+
+        List<Map<Integer, Integer>> ans = frequencyList(arr);
+
+        System.out.println(ans);
     }
 }
