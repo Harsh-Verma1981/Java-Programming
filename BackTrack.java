@@ -174,6 +174,43 @@ public class BackTrack {
         return left + right;
     }
 
+    public void func(String s, int index, List<String> list, List<List<String>> res){
+        if(index == s.length()){
+            res.add(new ArrayList<>(list));
+            return;
+        }
+
+        for(int i = index; i < s.length();i++){
+            if(palindrome(s, index, i)){
+                list.add(s.substring(index, i+1));
+                func(s, i + 1, list, res);
+                list.remove(list.size() - 1);
+            }
+        }
+
+    }
+
+    public boolean palindrome(String s, int start, int end){
+        while(start <= end){
+            if(s.charAt(start) != s.charAt(end)){
+                return false;
+            }
+
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+
+    public List<List<String>> partition(String s) {
+        List<String> list = new ArrayList<>();
+        List<List<String>> res = new ArrayList<>();
+
+        func(s, 0, list, res);
+        return res;
+    }
+
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
 
