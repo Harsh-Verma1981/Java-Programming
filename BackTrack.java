@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BackTrack {
@@ -211,6 +212,30 @@ public class BackTrack {
         return res;
     }
 
+    public static void Permutation(int[] arr, int idx, List<int[]> list){
+        // List<Integer> list = new ArrayList<>();
+        if(idx == arr.length){
+            list.add(arr.clone());
+            return;
+        }
+
+        for(int i = idx;i < arr.length;i++){
+            // swapping the element at idx and i
+            swap(arr, idx, i);
+            Permutation(arr, idx + 1, list);
+
+            // backtrack undo swap
+            swap(arr, idx, i);
+        }
+
+    }
+
+    public static void swap(int[] arr, int a, int b){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
     public static void main(String[] argh){
         Scanner sc = new Scanner(System.in);
 
@@ -247,7 +272,7 @@ public class BackTrack {
 
         int[] subk = {1,2,1};
         int k = 2;
-        SubsequenceSumK(0, subk, list, 0, k);
+        // SubsequenceSumK(0, subk, list, 0, k);
 
         // if(!PrintOneSubsequence(0, subk, list, 0, k)) System.out.println("No subsequence with sum equals to k");
         // PrintOneSubsequence(0, subk, list, 0, k);
@@ -255,6 +280,13 @@ public class BackTrack {
         // int count = CountSubsequence(0, subk, 0, k);
         // System.out.println("Count is " + count);
 
-        
+        int permute[] = {1,2,3};
+        List<int[]> plist = new ArrayList<>();
+        Permutation(permute, 0, plist);
+
+        for (int[] perm : plist) {
+            System.out.print(Arrays.toString(perm) + " | ");
+        }
+
     }   
 }
