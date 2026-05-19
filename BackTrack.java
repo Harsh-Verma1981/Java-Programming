@@ -277,8 +277,8 @@ public class BackTrack {
         // if(!PrintOneSubsequence(0, subk, list, 0, k)) System.out.println("No subsequence with sum equals to k");
         // PrintOneSubsequence(0, subk, list, 0, k);
 
-        // int count = CountSubsequence(0, subk, 0, k);
-        // System.out.println("Count is " + count);
+        int count = CountSubsequence(0, subk, 0, k);
+        System.out.println("Count is " + count);
 
         int permute[] = {1,2,3};
         List<int[]> plist = new ArrayList<>();
