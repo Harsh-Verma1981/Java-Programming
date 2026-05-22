@@ -47,7 +47,7 @@ class BinarySearchTree {
     // Preorder traversal
     public void preorder() {
         preorderRec(root);
-        System.out.println();
+        System.out.print();
     }
 
     private void preorderRec(Node root) {
