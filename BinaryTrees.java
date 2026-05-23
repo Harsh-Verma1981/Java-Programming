@@ -65,11 +65,12 @@ class BinarySearchTree {
     }
 
     private void postorderRec(Node root) {
-        if (root != null) {
-            postorderRec(root.left);
-            postorderRec(root.right);
-            System.out.print(root.data + " ");
+        if (root == null) {
+            return;
         }
+        postorderRec(root.left);
+        postorderRec(root.right);
+        System.out.print(root.data + " ");
     }
 
     // Search
