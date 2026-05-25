@@ -9,17 +9,6 @@ class Node {
         left = right = null;
     }
 }
-/* 
-create empty Queue
-push root into queue
-
-while queue is not empty:
-    node = queue.poll()    ← remove from front
-    visit node
-
-    if node.left exists  → queue.add(node.left)
-    if node.right exists → queue.add(node.right)
-*/
 
 class BinarySearchTree {
     Node root;

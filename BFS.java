@@ -50,6 +50,18 @@ public class BFS {
             }
         }
     }
+    /* 
+    create empty Queue
+    push root into queue
+
+    while queue is not empty:
+        node = queue.poll()    ← remove from front
+        visit node
+
+        if node.left exists  → queue.add(node.left)
+        if node.right exists → queue.add(node.right)
+    */
+
 
     public static void main(String[] args) {
 
