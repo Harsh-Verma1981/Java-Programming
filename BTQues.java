@@ -32,6 +32,24 @@ public class BTQues {
         // Key point: left -right > 1 for balanced BT
         return MaxDepth(root) != -1; 
     }
+    
+    static int longpath = 0;
+    public static int height(Node root){
+        if(root == null) return 0;
+
+        int left = height(root.left);
+        int right = height(root.right);
+
+        longpath = Math.max(longpath, left + right);
+
+        return 1 + Math.max(left, right);
+    }
+
+    public static int diameterOfBT(Node root){
+        height(root);
+
+        return longpath;
+    }
     public static void main(String[] args){
         Node root = new Node(1);
 
@@ -48,5 +66,9 @@ public class BTQues {
         System.out.println(heightOfTree);
 
         System.out.println(isBalancedTree(root));
+
+        int diameter = diameterOfBT(root);
+
+        System.out.println(diameter);
     }
 }
