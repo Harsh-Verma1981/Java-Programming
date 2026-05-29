@@ -49,6 +49,37 @@ public class BTviews {
 
         return list;
     }
+
+    public static List<Integer> BottomView(Node root){
+        List<Integer> list = new ArrayList<>();
+        Map<Integer, Integer> map = new TreeMap<>();
+
+        if(root == null) return list;
+
+        Queue<Pair> q = new LinkedList<>();
+        q.offer(new Pair(root, 0));
+
+        while(!q.isEmpty()){
+            Pair p = q.poll();
+
+            int line = p.row;
+            Node temp = p.node;
+
+            map.put(line, temp.val);// values can update in this on each level
+
+            if(temp.left != null) q.offer(new Pair(temp.left, line - 1));
+
+            if(temp.right != null) q.offer(new Pair(temp.right, line + 1));
+
+        }
+
+        for(Map.Entry<Integer, Integer> mp : map.entrySet()){
+            list.add(mp.getValue());
+        }
+
+        return list;
+    }
+
     public static void main(String[] args){
         Node root = new Node(1);
         /*
@@ -56,7 +87,10 @@ public class BTviews {
             / \
            2   3
           / \ / \
-         4  5|6  7   // 4 2 1 3 7
+         4  5|6  7   
+         
+        // 4 2 1 3 7 :TV
+        // 4 2 6 3 7 :BV
         */
         
         root.left = new Node(2);
@@ -68,7 +102,9 @@ public class BTviews {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        List<Integer> list = new ArrayList<>(TopView(root));
+        // List<Integer> list = new ArrayList<>(TopView(root));
+        List<Integer> list = new ArrayList<>(BottomView(root));
+
         System.out.println("The Top view: ");
         for(int i : list){
             System.out.print(i + " ");
