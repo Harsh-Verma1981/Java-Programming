@@ -1,0 +1,79 @@
+import java.util.*;
+class Pair{
+    Node node;
+    int row;
+
+    Pair(Node node, int row){
+        this.node = node;
+        this.row = row;
+    }
+}
+
+class Node{
+    int val;
+    Node left;
+    Node right;
+
+    Node(int val){
+        this.val = val;
+        left = right = null;
+    }
+}
+
+public class BTviews {
+    public static List<Integer> TopView(Node root){
+        // using Level order traversal
+        List<Integer> list = new ArrayList<>();
+        Map<Integer, Integer> map = new TreeMap<>();
+
+        if(root == null) return list;
+
+        Queue<Pair> q = new LinkedList<>();
+        q.offer(new Pair(root, 0));
+
+        while(!q.isEmpty()){
+            Pair it = q.poll();
+            int row = it.row;
+            Node temp = it.node;
+
+            if(map.get(row) == null) map.put(row, temp.val);
+
+            if(temp.left != null) q.offer(new Pair(temp.left, row - 1));
+
+            if(temp.right != null) q.offer(new Pair(temp.right, row + 1));
+        }
+
+        for(Map.Entry<Integer, Integer> mp : map.entrySet()){
+            list.add(mp.getValue());
+        }
+
+        return list;
+    }
+    public static void main(String[] args){
+        Node root = new Node(1);
+        /*
+             1
+            / \
+           2   3
+          / \ / \
+         4  5|6  7   // 4 2 1 3 7
+        */
+        
+        root.left = new Node(2);
+        root.right = new Node(3);
+
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+
+        root.right.left = new Node(6);
+        root.right.right = new Node(7);
+
+        List<Integer> list = new ArrayList<>(TopView(root));
+        System.out.println("The Top view: ");
+        for(int i : list){
+            System.out.print(i + " ");
+        }
+
+
+    }
+}
