@@ -92,6 +92,23 @@ public class BTviews {
         return list;
     }
 
+    public static boolean getPath(Node root, List<Integer> list, int value){
+        if(root == null) return false;
+
+        list.add(root.val);
+
+        if(root.val == value) return true;
+
+        if(getPath(root.left, list, value) || getPath(root.right, list, value)){
+            return true;
+        }
+
+        // undo or backtrack
+        list.remove(list.size() - 1);
+
+        return false;
+    }
+
     public static void main(String[] args){
         Node root = new Node(1);
         /*
@@ -118,14 +135,21 @@ public class BTviews {
         // List<Integer> list = new ArrayList<>(BottomView(root));
         List<Integer> list = new ArrayList<>();
         
-        RightLeftView(root, list, 0);
+        // RightLeftView(root, list, 0);
 
         // System.out.println("The Top view: ");
-        System.out.println("The Right View: ");
+        // System.out.println("The Right View: ");
+        // for(int i : list){
+        //     System.out.print(i + " ");
+        // }
+
+        boolean isExistPath = getPath(root, list, 5);
+
         for(int i : list){
             System.out.print(i + " ");
         }
+        System.out.println();
 
-
+        
     }
 }
