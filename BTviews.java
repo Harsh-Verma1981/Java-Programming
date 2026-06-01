@@ -109,6 +109,19 @@ public class BTviews {
         return false;
     }
 
+    public static Node LowestCommonAncestor(Node root, Node p, Node q){
+        if(root == null || root == q || root == p) return root;
+
+        Node left = LowestCommonAncestor(root.left, p, q);
+        Node right = LowestCommonAncestor(root.right, p, q);
+
+        if(left == null) return right;
+
+        else if(right == null) return left;
+        // if both are not null
+        else return root;
+    }
+
     public static void main(String[] args){
         Node root = new Node(1);
         /*
@@ -150,6 +163,11 @@ public class BTviews {
         }
         System.out.println();
 
-        
+        Node p = root.left.right;
+        Node q = root.right.right;
+
+        Node LCA = LowestCommonAncestor(root, p, q);
+        System.out.println(LCA.val);
+
     }
 }
