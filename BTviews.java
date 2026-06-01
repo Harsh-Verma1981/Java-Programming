@@ -80,6 +80,18 @@ public class BTviews {
         return list;
     }
 
+    public static List<Integer> RightLeftView(Node root, List<Integer> list, int level){
+        if(root == null) return list;
+
+        // taking first element for each level as per the view (right/left)
+        if(level == list.size()) list.add(root.val);
+
+        RightLeftView(root.right, list, level + 1);// left will be traverse first for left view
+        RightLeftView(root.left, list, level + 1);// right will be traverse first for right view 
+
+        return list;
+    }
+
     public static void main(String[] args){
         Node root = new Node(1);
         /*
@@ -103,9 +115,13 @@ public class BTviews {
         root.right.right = new Node(7);
 
         // List<Integer> list = new ArrayList<>(TopView(root));
-        List<Integer> list = new ArrayList<>(BottomView(root));
+        // List<Integer> list = new ArrayList<>(BottomView(root));
+        List<Integer> list = new ArrayList<>();
+        
+        RightLeftView(root, list, 0);
 
-        System.out.println("The Top view: ");
+        // System.out.println("The Top view: ");
+        System.out.println("The Right View: ");
         for(int i : list){
             System.out.print(i + " ");
         }
