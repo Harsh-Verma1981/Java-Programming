@@ -122,6 +122,41 @@ public class BTviews {
         else return root;
     }
 
+    public static int MaxWidth(Node root){
+        if(root == null) return 0;
+
+        Queue<Pair> q = new LinkedList<>();
+        int ans = 0;
+
+        q.offer(new Pair(root, 0));
+
+        
+        while(!q.isEmpty()){
+            int n = q.size();
+            
+            int left = 0;int right = 0;
+            int idx = q.peek().row;
+            
+            
+            for(int i = 0;i < n;i++){
+                Node curr = q.peek().node;
+                int curridx = q.peek().row - idx;
+
+                q.poll();
+
+                if(i == 0) left = curridx;
+                if(i == n-1) right = curridx;
+
+                if(curr.left != null) q.offer(new Pair(curr.left, 2*curridx+1));
+                if(curr.right != null) q.offer(new Pair(curr.right, 2*curridx+2));
+            }
+
+            ans = Math.max(ans, right - left + 1);
+        }
+
+        return ans;
+    }
+
     public static void main(String[] args){
         Node root = new Node(1);
         /*
@@ -167,7 +202,10 @@ public class BTviews {
         Node q = root.right.right;
 
         Node LCA = LowestCommonAncestor(root, p, q);
-        System.out.println(LCA.val);
+        // System.out.println(LCA.val);
+
+        int width = MaxWidth(root);
+        System.out.println(width);
 
     }
 }
