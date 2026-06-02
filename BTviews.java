@@ -205,7 +205,7 @@ public class BTviews {
         // System.out.println(LCA.val);
 
         int width = MaxWidth(root);
-        System.out.println(width);
+        System.out.println("Max Width of the Binary Tree is " + width);
 
     }
 }
