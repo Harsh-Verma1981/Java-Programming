@@ -1,5 +1,5 @@
 import java.util.*;
-
+// Level order traversal
 class Node {
     int data;
     Node left, right;
