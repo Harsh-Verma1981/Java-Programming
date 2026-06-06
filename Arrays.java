@@ -86,6 +86,10 @@ public class Arrays {
         System.out.print(count);
     */
         int marks[] = {21, 22, 34, 45, 56, 9, 7, 77, 89, 1, 11, 2, 1, 3, 91, 97};
+        Arrays.sort(marks);
+        int locatedIdx = Arrays.binarySearch(marks, 77);
+
+        System.out.println(locatedIdx);
         
     }
 }
