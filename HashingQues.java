@@ -13,6 +13,10 @@ public class HashingQues{
             }
         }
 
+        for(int i : nums){
+            map.put(i, map.getOrDefault(i, 0) + 1);
+        }
+
         // map.remove(1);// removing key from the map 
 
         // for(int key : map.keySet()){
