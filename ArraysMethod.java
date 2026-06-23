@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ArraysMethod {
@@ -60,8 +61,7 @@ public class ArraysMethod {
         /* sort method is use to sort the array */
         int []price = {12, 1, 2,5, 2, 11};
 
-        
-
+        // Error: Collections.reverseOrder(price)// descending order sort..
         Arrays.sort(price);
 
         for(int i : price){
