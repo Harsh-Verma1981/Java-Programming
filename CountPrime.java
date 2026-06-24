@@ -57,4 +57,18 @@ public class CountPrime {
         }
     }
 
+    public static void freqCount(String s){
+        TreeMap<Character, Integer> map = new TreeMap<>();
+
+        for(int i = 0;i < s.length();i++){
+            char ch = s.charAt(i);
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+
+        for(Map.Entry<Character, Integer> entry : map.entrySet()){
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+        
+    }
+
 }
