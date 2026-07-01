@@ -1,6 +1,6 @@
 import java.util.*;
-// import java.util.Scanner;
-// import java.util.Collections;
+import java.util.Scanner;
+import java.util.Collections;
 
 public class ArrayLists {
     public static void main(String[] args) {
@@ -73,6 +73,9 @@ public class ArrayLists {
 
         boolean res = list.equals(list2);
         System.out.println(res);
+
+        Collections.sort(list);// sorting in ascending order ..
+        list.size();
 
         sc.close();
     }
