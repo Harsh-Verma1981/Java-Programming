@@ -46,7 +46,44 @@ public class Operators {
             res ^= nums[i]; 
         }
 
+        // Even odd checker using bitwise and 
+        int num = 4;
+
+        if((nums & 1) == 1){
+            System.out.println("Odd");
+        }
+        else System.out.println("Even");
+
         // return res;
         System.out.println("Unique number: " + res);
+        /* 
+        1. & operator truth table
+        bit A | bit B | A & B
+        ------|-------|------
+        0   |   0   |   0
+        0   |   1   |   0
+        1   |   0   |   0
+        1   |   1   |   1     (only case that gives 1)
+
+        5 = 0101
+        3 = 0011
+        ------------
+            0001  = 1
+
+        2. | operator truth table
+        bit A | bit B | A | B
+        ------|-------|------
+        0   |   0   |   0
+        0   |   1   |   1
+        1   |   0   |   1
+        1   |   1   |   1
+
+        5 = 0101
+        3 = 0011
+        ------------
+            0111  = 7
+
+        
+        */
     }
 }
