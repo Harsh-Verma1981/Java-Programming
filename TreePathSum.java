@@ -33,6 +33,6 @@ public class TreePathSum{
 
         System.out.println(PathSum(root, 7)); // Output: true (1->2->4)
         System.out.println(PathSum(root, 8)); // Output: true (1->2->5)
-        System.out.println(PathSum(root, 15)); // Output: true (1->3->6)
+        System.out.println(PathSum(root, 15)); // Output: false (1->3->6)
     }
 }
