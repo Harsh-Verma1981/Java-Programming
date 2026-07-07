@@ -48,8 +48,8 @@ public class LeafSimilarTree {
         root2.right.left = new Node(4);
         root2.right.right = new Node(2);
         root2.right.right.left = new Node(9);
-        root2.right.right.right = new Node(8);
+        root2.right.right.right = new Node(11);
 
-        System.out.println(leafSimilar(root1, root2)); // True
+        System.out.println(leafSimilar(root1, root2)); // false
     }
 }
