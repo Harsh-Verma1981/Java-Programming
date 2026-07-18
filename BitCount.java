@@ -29,6 +29,16 @@ public class BitCount {
 
         int onesbits = Integer.bitCount(no);
         System.out.println("Total Number of 1's Bits in " + no + " is " + onesbits);
+
+        // unique no
+        int res = 0;
+        int []nums = {1,1,2,3,3};
+
+        for(int num : nums){
+            res ^= num;
+        }
+
+        System.out.println(res);
     }
 }
 
