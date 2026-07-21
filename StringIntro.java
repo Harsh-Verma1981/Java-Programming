@@ -249,6 +249,15 @@ public class StringIntro {
         // }
 
         // System.out.println(inputSample);
+
+        String greet = "  Hello World  ";
+        // greet.trim();// removes trailing spaces from both front and end
+        String[] words = greet.trim().split("\\s+");
+
+        for(String word : words){
+            System.out.println(word);
+        }
+
         
         sc.close();
     }
