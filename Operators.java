@@ -85,5 +85,17 @@ public class Operators {
 
         
         */
+        // swapping using XOR 
+        int num1 = 10;
+        int num2 = 20;
+
+        a = a ^ b;// a = 10 ^ 20
+
+        b = a ^ b;// b = (10 ^ 20) ^ 20 // 20 ^ 20 = 0 // 10 ^ 0 = 10
+        // b = 10
+        a = a ^ b;// a = (10 ^ 20) ^ 10 // 10 ^ 10 = 0 // 20 ^ 0 = 20
+        // a = 20
+
+        
     }
 }
