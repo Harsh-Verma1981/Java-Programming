@@ -38,24 +38,24 @@ public class Operators {
         System.out.println("a >>> 2: " + (a >>> 2)); // unsigned right shift
 
         // bitwise XOR for unique number
-        int []nums = {2, 2, 1};
+        // int []nums = {2, 2, 1};
 
-        int res = 0;
-        for(int i = 0;i < nums.length;i++){
-            // res = arr[i];
-            res ^= nums[i]; 
-        }
+        // int res = 0;
+        // for(int i = 0;i < nums.length;i++){
+        //     // res = arr[i];
+        //     res ^= nums[i]; 
+        // }
 
         // Even odd checker using bitwise and 
         int num = 4;
 
-        if((nums & 1) == 1){
+        if((num & 1) == 1){
             System.out.println("Odd");
         }
         else System.out.println("Even");
 
         // return res;
-        System.out.println("Unique number: " + res);
+        // System.out.println("Unique number: " + res);
         /* 
         1. & operator truth table
         bit A | bit B | A & B
@@ -95,7 +95,19 @@ public class Operators {
         // b = 10
         a = a ^ b;// a = (10 ^ 20) ^ 10 // 10 ^ 10 = 0 // 20 ^ 0 = 20
         // a = 20
+        
+        int []nums = {1, 2, 3};
+        int first = 1;
+        int []encoded = new int[nums.length + 1];
 
+        encoded[0] = first;
+        for(int i = 1;i < encoded.length;i++){
+            encoded[i] = encoded[i - 1] ^ nums[i - 1];
+        }
+
+        for(int h : encoded){
+            System.out.print(h + " ");
+        }
         
     }
 }
