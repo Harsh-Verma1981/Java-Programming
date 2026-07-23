@@ -29,6 +29,8 @@ public class Recursion {
 
         System.out.println(fibonacci(6));
 
+        System.out.println("Count: " + CountDigits(11221)); // 5
+
         sc.close();
     }
 
@@ -54,6 +56,14 @@ public class Recursion {
         }
         printN(n - 1);
         System.out.print(n + " ");
+    }
+
+    public static int CountDigits(int n){
+        if(n < 10){
+            return 1;
+        }
+
+        return 1 + CountDigits(n / 10);
     }
 
     public static int SumOfDigits(int x){
