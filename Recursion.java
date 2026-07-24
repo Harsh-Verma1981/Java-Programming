@@ -31,6 +31,8 @@ public class Recursion {
 
         System.out.println("Count: " + CountDigits(11221)); // 5
 
+        System.out.println("Digit Root: " + DigitRoot(99999));// 9
+
         sc.close();
     }
 
@@ -72,6 +74,15 @@ public class Recursion {
         }
 
         return (x % 10) + SumOfDigits(x / 10);// sum of all digits
+    }
+
+    public static int DigitRoot(int n){
+        if(n < 10){
+            return n;
+        }
+
+        int sum = SumOfDigits(n);
+        return DigitRoot(sum);
     }
 
     public static int PowerOfNumbers(int base, int power){
