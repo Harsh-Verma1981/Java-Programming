@@ -33,6 +33,8 @@ public class Recursion {
 
         System.out.println("Digit Root: " + DigitRoot(99999));// 9
 
+        System.out.println(PowerOfThree(81));// true
+
         sc.close();
     }
 
@@ -91,6 +93,16 @@ public class Recursion {
         }
 
         return base * PowerOfNumbers(base, power - 1);
+    }
+
+    public static boolean PowerOfThree(int n){
+        if(n < 0) return false;
+
+        if(n == 1) return true;
+
+        if(n % 3 != 0) return false;
+
+        return PowerOfThree(n / 3);
     }
 
     public static int SumOfNnumbers(int n){
