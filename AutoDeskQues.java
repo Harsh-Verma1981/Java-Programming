@@ -43,7 +43,59 @@ public class AutoDeskQues{
 
     }
 
-    
+    public static int FindElement(int []arr, int n){
+
+        // Brute Force approach ..
+        // int res = -1;
+        // int n = arr.length;
+
+        // for (int i = 1; i < n - 1; i++) {   // no need to check i=0 or i=n-1
+        //     int num = arr[i];
+        //     boolean isLess = true;
+
+        //     // check all elements to the left are <= num
+        //     for (int j = i - 1; j >= 0; j--) {
+        //         if (num < arr[j]) { isLess = false; break; }
+        //     }
+
+        //     if (isLess) {
+        //         // check all elements to the right are >= num
+        //         for (int j = i + 1; j < n; j++) {
+        //             if (num > arr[j]) { isLess = false; break; }
+        //         }
+        //         if (isLess) res = num;
+        //     }
+        // }
+        // return res;
+
+        // optimal approach Prefix sum T.C. - O(n) ..
+        int n = arr.length;
+        if (n < 3) return -1;
+
+        int[] leftMax = new int[n];
+        int[] rightMin = new int[n];
+
+        leftMax[0] = arr[0];
+        for (int i = 1; i < n; i++) {
+            leftMax[i] = Math.max(leftMax[i - 1], arr[i]);
+        }
+
+        rightMin[n - 1] = arr[n - 1];
+        for (int i = n - 2; i >= 0; i--) {
+            rightMin[i] = Math.min(rightMin[i + 1], arr[i]);
+        }
+
+        int res = -1;
+        for (int i = 1; i < n - 1; i++) {
+            if (arr[i] >= leftMax[i - 1] && arr[i] <= rightMin[i + 1]) {
+                res = arr[i];
+            }
+        }
+
+        return res;
+
+    }
+
     public static void main(String[] args){
         String num1 = "99";
         String num2 = "99";
