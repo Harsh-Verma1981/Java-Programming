@@ -25,11 +25,35 @@ public class AutoDeskQues{
 
         return sb.toString();
     }
+
+    public static int Count(int arr[], int k){
+        int count = 0;
+        int start = 0;
+        int end = k - 1;
+
+        while(end < arr.length){
+            int mid = start + (end - start) / 2;
+            if(arr[mid] % (arr[start] + arr[end]) == 0) count++;
+
+            start++;
+            end++;
+        }
+        
+        return count;
+
+    }
+
+    
     public static void main(String[] args){
         String num1 = "99";
         String num2 = "99";
 
         String result = DigitSum(num1, num2);
         System.out.println(result);
+
+        int []arr = {1,4,1,6,2};
+
+        int count = Count(arr, 3);
+        System.out.println(count);
     }
 }
