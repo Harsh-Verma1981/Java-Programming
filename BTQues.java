@@ -74,6 +74,16 @@ public class BTQues {
             isSymmetric(p.left, q.right) && isSymmetric(p.right, q.left)
         );
     }
+    static int count = 0;
+    public static int CountNodes(Node root){
+        if(root == null) return 0;
+
+        count += 1;
+        CountNodes(root.left);
+        CountNodes(root.right);
+
+        return count;
+    }
 
     public static void main(String[] args){
         Node root = new Node(1);
@@ -113,5 +123,8 @@ public class BTQues {
 
         boolean symetric = isSymmetric(root2.left, root2.right);// left subtree equals to right subtree
         System.out.println(symetric);
+
+        int counter = CountNodes(root);
+        System.out.println(counter);
     }
 }
