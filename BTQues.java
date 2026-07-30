@@ -78,7 +78,10 @@ public class BTQues {
     public static int CountNodes(Node root){
         if(root == null) return 0;
 
-        count += 1;
+        if(root.left == null && root.right == null){
+            count += 1;
+        }
+
         CountNodes(root.left);
         CountNodes(root.right);
 
