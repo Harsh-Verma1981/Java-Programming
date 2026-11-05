@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.*;
 
 // abstract class
 abstract class Car{
@@ -80,7 +82,7 @@ public class Oops {
 
         // Car car = new Car();// can't create instances of abstract class
         /*Car car = new UpdatedSkoda();
-        // all abstract methods must be override it will give error if not
+        // all abstract methods must be override else it will give error
         car.playMusic();
         car.fly();
         car.fuel();*/
