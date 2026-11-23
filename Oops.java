@@ -97,5 +97,6 @@ public class Oops {
         System.out.println(map.time);*/
 
         B obj = new B(1);
+        // obj = new B();
     }
 }
